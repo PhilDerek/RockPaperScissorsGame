@@ -1,0 +1,203 @@
+body {    
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+/* title styles */
+#title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.lettersTitle {
+    font-size: 25px;    
+}
+
+#rockText {
+    color: silver;
+}
+
+#paperText {
+    color: red;
+}
+
+#scissorsText {
+    color: green;
+}
+
+/* newGame styles */
+#newGame {
+    border-radius: 15px; /* Po dodaniu SASSa zrobić całość styli stąd jako 1 regułę */
+    width: 600px;
+    text-align: center;
+    margin: auto;
+    margin-top: 15%;
+    background-color: black;
+    color: white;
+}
+
+#newGame p {
+    font-size: 26px; /* Po dodaniu SASSa zrobić całość styli stąd jako 1 regułę */
+    font-weight: bold;
+    padding-top: 20px;
+    font-family: 'Indie Flower', cursive;
+}
+
+.gameName {
+    color: aqua;
+    font-size: 35px;
+    display: block;
+}
+
+#newGame button {
+    margin: 30px auto;
+    width: 30%;
+    font-size: 24px;
+    background-color: goldenrod;
+    border: none;
+}
+
+/* playerNameWindow styles */
+#playerNameWindow {
+    text-align: center;
+    background-color: black;
+    color: white;   
+    border-radius: 15px;
+    width: 600px;
+    margin: auto;
+    margin-top: 15%;
+    padding-bottom: 20px;
+}
+
+#playerNameWindow p {
+    font-size: 26px;
+    font-weight: bold;
+    padding-top: 20px;
+    font-family: 'Indie Flower', cursive;
+}
+
+#playerNameWindow button {
+    display: block;
+    margin: 30px auto;
+    width: 20%;
+    font-size: 24px;
+    background-color: goldenrod;
+    border: none;
+}
+
+/* gameStarted styles */
+#gameStarted {
+    margin-top: 15%;
+}
+
+#gameButtons {
+    display: flex;
+    justify-content: center;
+}
+
+#gameButtons button {
+    margin: 0 15px;
+    box-shadow: 3px 3px #888888;
+    border: none;
+}
+
+#gameButtons button:active {
+    box-shadow: 1px 1px #888888;
+    transform: translateY(2px);
+}
+
+#rock {
+    background-color: gray;
+}
+
+#rock:hover {
+    background-color: #B0A7A7;
+}
+
+#paper {
+    background-color: red;
+}
+
+#paper:hover {
+    background-color: #FF7C7C;
+}
+
+#scissors {
+    background-color: green;
+}
+
+#scissors:hover {
+    background-color: #4EDB4E;
+}
+
+#names {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 10px;   
+}
+
+#score {
+    display: flex;
+    justify-content: space-around;
+}
+
+#choices {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#choices::before,
+#choices::after {
+    content: "";
+	display: table;
+	clear: both;
+}
+
+#choices span {
+    float: left;
+    width: 50%;
+}
+
+/* End of game */
+#gameEnd1,
+#gameEnd2 {
+    display: none;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin-top: 15%;
+}
+
+.box {
+    text-align: center;
+    width: 600px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+
+.box p {
+    font: 30px bold;
+    font-family: 'Indie Flower', cursive;
+}
+
+.box button {
+    width: 30%;
+    font-size: 24px;
+    background-color: goldenrod;
+    border: none;
+}
+
+.flex-item {
+    margin: 25px;
+}

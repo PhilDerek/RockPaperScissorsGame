@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kamień, papier, nożyce</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+    <main id="bigImage">
+        <div id="title">
+            <div>
+                <p>Welcome to the game <span id="rockText" class="lettersTitle">Rock</span> <span id="paperText" class="lettersTitle">Paper</span> <span id="scissorsText" class="lettersTitle">Scissors</span></p>
+            </div>
+        </div>
+        <div id="newGame">
+            <p>Welcome to the game <span class="gameName">Rock, paper, scissors!</span></p>
+            <button id="startGame" class="btn btn-primary">New Game</button>
+        </div>
+        <div id="playerNameWindow">
+            <p>Enter Your name:</p>
+            <input type="text" id="inputName" placeholder="name">
+            <button id="finalStart" class="btn btn-primary">Let's start</button>
+        </div>
+        <div id="gameStarted">
+            <div id="gameButtons">
+                <button id="rock" class="btn btn-light btn-lg">Kamień</button>
+                <button id="paper" class="btn btn-light btn-lg">Papier</button>
+                    <button id="scissors" class="btn btn-light btn-lg">Nożyce</button>
+            </div>
+            <div id="names">
+                <span id="playerName">Player</span>
+                <span id="computerName">Computer</span>
+            </div>
+            <div id="score">
+                <span id="playerScore">0</span>
+                <span id="computerScore">0</span>
+            </div>
+            <div id="choices" class="container-fluid">
+                <span id="playerPick" class="col-md"></span>
+                <span id="computerPick" class="col-md"></span>
+            </div>              
+        </div>
+        <div id="gameEnd1" class="flex-container">
+            <div class="box">
+                <p class="flex-item">You Won! Well done!</p>
+                <button class="reloadButton flex-item btn btn-primary">Play again</button>
+            </div>                        
+        </div>
+        <div id="gameEnd2" class="flex-container">
+            <div class="box">
+                <p class="flex-item">You lost! Dont't give up!</p>
+                <button class="reloadButton flex-item btn btn-primary">Play again</button>
+            </div>    
+        </div>
+    </main>
+    
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
