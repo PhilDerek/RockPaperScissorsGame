@@ -7,10 +7,15 @@ body {
 /* title styles */
 #title {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     font-size: 20px;
+}
+
+#title p {
+    text-align: center;
 }
 
 .lettersTitle {
@@ -30,16 +35,6 @@ body {
 }
 
 /* newGame styles */
-#newGame {
-    border-radius: 15px; /* Po dodaniu SASSa zrobić całość styli stąd jako 1 regułę */
-    width: 600px;
-    text-align: center;
-    margin: auto;
-    margin-top: 15%;
-    background-color: black;
-    color: white;
-}
-
 #newGame p {
     font-size: 26px; /* Po dodaniu SASSa zrobić całość styli stąd jako 1 regułę */
     font-weight: bold;
@@ -110,28 +105,19 @@ body {
     transform: translateY(2px);
 }
 
-#rock {
-    background-color: gray;
+.btn-rps {
+   width: 130px;
+   height: 60px;
+   text-align: center;
+   background-color: #ebebe0;
 }
 
-#rock:hover {
+.btn-rps img {
+    width: 30px;
+}
+
+.btn-rps:hover {
     background-color: #B0A7A7;
-}
-
-#paper {
-    background-color: red;
-}
-
-#paper:hover {
-    background-color: #FF7C7C;
-}
-
-#scissors {
-    background-color: green;
-}
-
-#scissors:hover {
-    background-color: #4EDB4E;
 }
 
 #names {

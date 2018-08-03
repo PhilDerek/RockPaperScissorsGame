@@ -52,7 +52,7 @@ var playerScore = document.getElementById("playerScore");
 var computerScore = document.getElementById("computerScore");
 
 var playerNum = 0;
-var compNum = 0;
+var compNum= 0;
 
 rock.addEventListener("click", function () {
     playerPick.innerHTML = choice[0];
@@ -107,7 +107,7 @@ var gameStarted = document.getElementById("gameStarted");
 
 //starting display
 title.style.display = "none";
-newGame.style.display = "block";
+newGame.style.display = "flex";
 playerNameWindow.style.display = "none";
 gameStarted.style.display = "none";
 
@@ -119,7 +119,7 @@ inputName.value = "";
 
 startGame.addEventListener("click", function() {
     newGame.style.display = "none";  
-    playerNameWindow.style.display = "block";
+    playerNameWindow.style.display = "flex";
 })
 
 //start game actions
@@ -148,6 +148,6 @@ for (var i = 0; i < reloadButton.length; i++) {
         for (var i = 0; i < flexContainer.length; i++) {
             flexContainer[i].style.display = "none";
         }        
-        playerNameWindow.style.display = "block";
+        playerNameWindow.style.display = "flex";
     });
 }
