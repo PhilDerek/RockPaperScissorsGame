@@ -16,7 +16,8 @@ var gameEnd2 = document.getElementById("gameEnd2");
 
 function afterScore () {
     title.style.display = "none";
-    gameStarted.style.display = "none";    
+    gameStarted.style.display = "none";
+    selectedIcons.style.display = "none";
     mainTag.style.backgroundImage = "";
 }
 
@@ -28,14 +29,18 @@ function letsGetStarted () {
 }
 
 function whoWon () {    
-    if (computerScore.textContent == "10") {
-        afterScore();
-        gameEnd2.style.display = "flex";
-        letsGetStarted();
-    } else if (playerScore.textContent == "10") {
-        afterScore();
-        gameEnd1.style.display = "flex";
-        letsGetStarted();
+    if (compNum == 10) {
+        setTimeout(function() {
+            afterScore();
+            gameEnd2.style.display = "flex";
+            letsGetStarted();
+        }, 2000)       
+    } else if (playerNum == 10) {
+        setTimeout(function() {
+            afterScore();
+            gameEnd1.style.display = "flex";
+            letsGetStarted();
+        }, 2000)       
     }
 }
 
@@ -51,47 +56,113 @@ var rock = document.getElementById("rock"),
 var playerScore = document.getElementById("playerScore");
 var computerScore = document.getElementById("computerScore");
 
+var playerSelectedIcon = document.getElementById("playerSelectedIcon");
+var computerSelectedIcon = document.getElementById("computerSelectedIcon");
+
 var playerNum = 0;
 var compNum= 0;
 
+var plusOneForPlayer = document.getElementById("plusOneForPlayer");
+var plusOneForComputer = document.getElementById("plusOneForComputer");
+
+var addOne = "+1";
+
 rock.addEventListener("click", function () {
     playerPick.innerHTML = choice[0];
+    playerSelectedIcon.style.backgroundImage = "url('images/icons8-rock-50.png')";
+    playerSelectedIcon.classList.add("playerBattleAnimationClass");
+    computerSelectedIcon.classList.add("computerBattleAnimationClass");
+    setTimeout(function() {
+        playerSelectedIcon.classList.remove("playerBattleAnimationClass");
+        computerSelectedIcon.classList.remove("computerBattleAnimationClass");
+    }, 1000);
     computerPick.innerHTML = pickFunc();
+    computerSelectedIcon.style.backgroundImage = "url('images/icons8-" + computerPick.innerHTML + "-50.png')";    
+
     switch (computerPick.textContent){
         case "rock":
             break;
         case "paper":
-            computerScore.innerHTML = ++compNum;
+            computerScore.innerHTML = compNum++ + addOne;
+            computerScore.classList.add("scoreEffects");   
+            setTimeout(function () {
+                computerScore.innerHTML = compNum;
+                computerScore.classList.remove("scoreEffects");
+            }, 1000);
             break;
         default:
-            playerScore.innerHTML = ++playerNum;
+            playerScore.innerHTML = playerNum++ + addOne;
+            playerScore.classList.add("scoreEffects");
+            setTimeout(function () {
+                playerScore.innerHTML = playerNum;
+                playerScore.classList.remove("scoreEffects");
+            }, 1000);
     }
     whoWon();
 });
 
 paper.addEventListener("click", function() {
     playerPick.innerHTML = choice[1];
+    playerSelectedIcon.style.backgroundImage = "url('images/icons8-paper-50.png')";
+    playerSelectedIcon.classList.add("playerBattleAnimationClass");
+    computerSelectedIcon.classList.add("computerBattleAnimationClass");
+    setTimeout(function() {
+        playerSelectedIcon.classList.remove("playerBattleAnimationClass");
+        computerSelectedIcon.classList.remove("computerBattleAnimationClass");
+    }, 1000);
     computerPick.innerHTML = pickFunc();
+    computerSelectedIcon.style.backgroundImage = "url('images/icons8-" + computerPick.innerHTML + "-50.png')";
+
     switch (computerPick.textContent){
         case "rock":
-            playerScore.innerHTML = ++playerNum;
+            playerScore.innerHTML = playerNum++ + addOne;
+            playerScore.classList.add("scoreEffects");
+            setTimeout(function () {
+                playerScore.innerHTML = playerNum;
+                playerScore.classList.remove("scoreEffects");
+            }, 1000);
             break;
         case "paper":
             break;
         default:
-            computerScore.innerHTML = ++compNum;
+            computerScore.innerHTML = compNum++ + addOne;
+            computerScore.classList.add("scoreEffects");   
+            setTimeout(function () {
+                computerScore.innerHTML = compNum;
+                computerScore.classList.remove("scoreEffects");
+            }, 1000);
     }
     whoWon();
 });
+
 scissors.addEventListener("click", function () {
     playerPick.innerHTML = choice[2];
+    playerSelectedIcon.style.backgroundImage = "url('images/icons8-scissors-50.png')";
+    playerSelectedIcon.classList.add("playerBattleAnimationClass");
+    computerSelectedIcon.classList.add("computerBattleAnimationClass");
+    setTimeout(function() {
+        playerSelectedIcon.classList.remove("playerBattleAnimationClass");
+        computerSelectedIcon.classList.remove("computerBattleAnimationClass");
+    }, 1000);
     computerPick.innerHTML = pickFunc();
+    computerSelectedIcon.style.backgroundImage = "url('images/icons8-" + computerPick.innerHTML + "-50.png')";
+
     switch (computerPick.textContent){
         case "rock":
-            computerScore.innerHTML = ++compNum;
+            computerScore.innerHTML = compNum++ + addOne; 
+            computerScore.classList.add("scoreEffects");
+            setTimeout(function () {
+                computerScore.innerHTML = compNum;
+                computerScore.classList.remove("scoreEffects");
+            }, 1000);
             break;
         case "paper":
-            playerScore.innerHTML = ++playerNum;
+            playerScore.innerHTML = playerNum++ + addOne;
+            playerScore.classList.add("scoreEffects");
+            setTimeout(function () {
+                playerScore.innerHTML = playerNum;
+                playerScore.classList.remove("scoreEffects");
+            }, 1000);
             break;
         default:
             computerScore.innerHTML = compNum;
@@ -104,12 +175,14 @@ var title = document.getElementById("title");
 var newGame = document.getElementById("newGame");
 var playerNameWindow = document.getElementById("playerNameWindow");
 var gameStarted = document.getElementById("gameStarted");
+var selectedIcons = document.getElementById("selectedIcons");
 
 //starting display
 title.style.display = "none";
 newGame.style.display = "flex";
 playerNameWindow.style.display = "none";
 gameStarted.style.display = "none";
+selectedIcons.style.display = "none";
 
 //first click action
 var startGame = document.getElementById("startGame");
@@ -135,6 +208,7 @@ finalStart.addEventListener("click", function() {
     playerNameWindow.style.display = "none";
     title.style.display = "flex";
     gameStarted.style.display = "block";
+    selectedIcons.style.display = "flex";
     changeImg();
 })
 

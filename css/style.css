@@ -86,7 +86,7 @@ body {
 
 /* gameStarted styles */
 #gameStarted {
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 #gameButtons {
@@ -131,22 +131,17 @@ body {
     justify-content: space-around;
 }
 
+.scoreEffects {
+    color: #08DF08;
+    font-weight: bold;
+    animation: BigScoreEffect 1s;
+    margin-left: -22px;
+}
+
 #choices {
-    text-align: center;
-    margin: 0 auto;
-    padding: 0;
-}
-
-#choices::before,
-#choices::after {
-    content: "";
-	display: table;
-	clear: both;
-}
-
-#choices span {
-    float: left;
-    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    visibility: hidden;
 }
 
 /* End of game */
@@ -186,4 +181,65 @@ body {
 
 .flex-item {
     margin: 25px;
+}
+
+#startGame:hover,
+#finalStart:hover,
+.reloadButton:hover {
+    background-color: aqua;
+    color: black;
+}
+
+#selectedIcons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#selectedIcons span {
+    width: 50px;
+    height: 50px;
+}
+
+.playerBattleAnimationClass {
+    animation: playerBattleAnimation 1s;
+}
+
+.computerBattleAnimationClass {
+    animation: computerBattleAnimation 1s;
+}
+
+@keyframes playerBattleAnimation {
+    0% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+    50% {
+        transform: translate(250px, 0px) scale(2.0, 2.0);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+}
+
+@keyframes computerBattleAnimation {
+    0% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+    50% {
+        transform: translate(-250px, 0px) scale(2.0, 2.0);
+    }
+    100% {
+        transform: translate(0px, 0px) scale(1.0, 1.0);
+    }
+}
+
+@keyframes BigScoreEffect {
+    0% {
+        transform: scale(1.0, 1.0);
+    }
+    50% {
+        transform: scale(3.0, 3.0);
+    }
+    100% {
+        transform: scale(1.0, 1.0);
+    }
 }
